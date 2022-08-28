@@ -11,12 +11,12 @@ class Profile(models.Model):
         return f"{self.user.username} Profile"
 
 
-    def save(self):   # not the effcicient way to overwrite save function for large projects 
-        super().save()
+    # def save(self):   # not the effcicient way to overwrite save function for large projects 
+    #     super().save(*args, **kwargs)
 
 
-        img = Image.open(self.image.path)
-        if img.height > 300 or img.width > 300:
-            output = (300,300)
-            img.thumbnail(output)
-            img.save(self.image.path)
+    #     img = Image.open(self.image.path)
+    #     if img.height > 300 or img.width > 300:
+    #         output = (300,300)
+    #         img.thumbnail(output)
+    #         img.save(self.image.path)
